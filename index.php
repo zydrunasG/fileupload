@@ -18,7 +18,9 @@ else {
 
 
 
-
+<script>
+    removeClass();
+</script>
 
 <?php
 //include header template
