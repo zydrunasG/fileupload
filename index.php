@@ -9,7 +9,7 @@ if ($user->is_logged_in()){
 }
 else {
     echo '<div class="container-fluid">';
-    echo '<h1 class="page-header text-center">Welome to eshop, not logged in</h1>';
+    echo '<h1 class="page-header text-center">Welome to FileUpload,you are not logged in</h1>';
     echo '</div>';
 }
 ?>

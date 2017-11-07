@@ -8,10 +8,10 @@ date_default_timezone_set('Europe/Vilnius');
 define('DBHOST', 'localhost');
 define('DBUSER', 'root');
 define('DBPASS', '');
-define('DBNAME', 'eshop');
+define('DBNAME', 'fileupload');
 
 // application address
-define('DIR','localhost/eshop/');
+define('DIR','localhost/fileupload/');
 
 try{
     $db = new PDO("mysql:host=".DBHOST.";port=3306;dbname=".DBNAME, DBUSER,DBPASS);

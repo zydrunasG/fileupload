@@ -64,7 +64,7 @@ if(isset($_POST['submit'])){
             // prepare to send email
             $to = $row['email'];
             echo $to;
-            $subject = "Password Reset";
+            $subject = "FileUpload Password Reset";
             $body = "<p>Someone requested that the password be reset.</p>
                 <p>If this was a mistake, just ignore this email and nothing will happen.</p>
                 <p>To reset your password, visit the following address: <a href='".DIR."resetPassword.php?key=$token'>".DIR."resetPassword.php?key=$token</a></p>";
