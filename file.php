@@ -1,12 +1,15 @@
 <?php
-$title = "Eshop main page";
+$title = "Upload file";
 require_once('includes/config.php');
 
 require('layout/header.php');
 
 
+
+
 ?>
 <!-- Html goes here -->
+
 
 
 
@@ -15,8 +18,25 @@ require('layout/header.php');
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h1 class="page-header text-center">File Upload</h1>
+                <?php
+
+                if(isset($_GET['action'])){
+
+                    //check the action
+                    if ($_GET['action'] == 'uploaded') {
+                        echo "<h2 class='bg-success text-center'>The file has been uploaded</h2>";
+
+                    }
+                    if ($_GET['action'] == 'error'){
+                        echo "<h2 class='bg-danger text-center'>The file has not been uploaded</h2>";
+                    }
+
+                }
+
+                ?>
+
                 <h3 class="text-center">Please select file to upload</h3>
-                <form role="form" method="post" action="upload.php" autocomplete="off" enctype="multipart/form-data">
+                <form method="post" action="upload.php" autocomplete="off" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="fileinput input-group fileinput-new" data-provides="fileinput">
                             <div class="form-control" data-trigger="fileinput">
@@ -31,6 +51,10 @@ require('layout/header.php');
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+
+                        <div class="form-group">
+                            <h2>Allowed types: .jpg .jpeg .png .gif .rar .zip</h2>
                         </div>
 
                         </div>

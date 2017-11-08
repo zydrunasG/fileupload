@@ -1,5 +1,5 @@
 <?php
-$title = "Eshop main page";
+$title = "Public files";
 require_once('includes/config.php');
 
 require('layout/header.php');
