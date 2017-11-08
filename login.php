@@ -106,6 +106,11 @@ require('layout/header.php');
 
 </div>
 
+<script>
+    removeClass();
+    document.getElementById("li-login").classList.add("active");
+</script>
+
 
 <?php 
 //include header template

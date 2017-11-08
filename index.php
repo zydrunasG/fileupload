@@ -20,6 +20,7 @@ else {
 
 <script>
     removeClass();
+    document.getElementById("li-home").classList.add("active");
 </script>
 
 <?php

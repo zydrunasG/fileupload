@@ -190,6 +190,11 @@ require('layout/header.php');
 	</div>
 
 </div>
+<script>
+    removeClass();
+    document.getElementById("li-register").classList.add("active");
+</script>
+
 
 <?php
 //include header template

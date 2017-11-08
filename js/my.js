@@ -1,8 +1,8 @@
-function removeClass() {
+function removeClass(ac) {
 
 
     document.getElementById("li-home").classList.remove("active");
-    
+
     if(document.getElementById("li-publicfiles")){
         document.getElementById("li-publicfiles").classList.remove('active');
     }
@@ -25,6 +25,7 @@ function removeClass() {
     if( document.getElementById("li-register")){
         document.getElementById("li-register").classList.remove('active');
     }
+
 
 
 }

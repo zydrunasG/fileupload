@@ -37,9 +37,12 @@ $files1 = scandir($dir,1);
         </div>
     </div>
 </div>
-<script>
 
+<script>
+    removeClass();
+    document.getElementById("li-publicfiles").classList.add("active");
 </script>
+
 
 <?php
 //include header template

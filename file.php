@@ -44,7 +44,10 @@ require('layout/header.php');
     </div>
 
 
-
+<script>
+    removeClass();
+    document.getElementById("li-file").classList.add("active");
+</script>
 
 <?php
 //include header template
