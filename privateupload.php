@@ -1,6 +1,6 @@
 <?php
 require('includes/config.php');
-$target_dir = "files/public/";
+$target_dir = "files/private/".$_SESSION['memberID'].'/';
 $uploadOk = 1;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
@@ -29,7 +29,7 @@ $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-header('Location: file.php?action=error');
+header('Location: privatefile.php?action=error');
 exit;
 // if everything is ok, try to upload file
 } else {
@@ -42,14 +42,14 @@ $stmt->execute(array(
 ':memberID' => $_SESSION['memberID'],
 'filename' => $filename,
 'date' => date("Y-m-d H:i:s"),
-'isPrivate' => 0,
+'isPrivate' => 1,
 'rating' => 0,
 ));
 }
 catch(PDOException $e) {
 // $error[] = $e->getMessage();
 }
-header('Location: file.php?action=uploaded');
+header('Location: privatefile.php?action=uploaded');
 exit;
 }
 }

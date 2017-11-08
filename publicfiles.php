@@ -22,7 +22,7 @@ $dir = 'files/public/';
                 <tbody>
                 <?php
 
-                $stmt = $db->prepare('SELECT * FROM `files` INNER JOIN members ON files.memberID=members.memberID ORDER BY  `date` DESC');
+                $stmt = $db->prepare('SELECT * FROM `files` INNER JOIN members ON files.memberID=members.memberID WHERE isPrivate=0 ORDER BY  `date` DESC  ');
                 $stmt->execute();
                 $result = $stmt->fetchAll();
 
@@ -32,15 +32,20 @@ $dir = 'files/public/';
                 $count= 1;
                     foreach ($result as $r)
                     {
-                        echo '<tr>';
 
-                        echo '<td><a href="download.php?filename='.$r['filename'] .'">'.$r["filename"].'</a></td>';
-                        echo '<td> '.$r['username'].' </td>';
-                        echo '<td> '.$r['date'].' </td>';
+                            echo '<tr>';
+
+                            echo '<td><a href="download.php?filename='.$r['filename'].'&private=0">'.$r["filename"].'</a></td>';
+                            echo '<td> '.$r['username'].' </td>';
+                            echo '<td> '.$r['date'].' </td>';
 
 
-                        echo '</tr>';
-                    $count++;
+                            echo '</tr>';
+
+                            $count++;
+
+
+
                     }
                 ?>
                 </tbody>

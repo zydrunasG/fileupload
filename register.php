@@ -27,8 +27,8 @@ if(isset($_POST['submit'])){
 		$error[] = 'Usernames must be at least 3 Alphanumeric characters';
 	} else {
 		$stmt = $db->prepare('SELECT username FROM members WHERE username = :username');
-		$stmt->execute(array(':username' => $username));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->execute(array(':username' => $username));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 		if(!empty($row['username'])){
 			$error[] = 'Username provided is already in use.';
@@ -84,6 +84,8 @@ if(isset($_POST['submit'])){
 				':active' => $activasion
 			));
 			$id = $db->lastInsertId('memberID');
+			$path = 'files/private/'.$id;
+			mkdir($path);
 
 			//send email
 

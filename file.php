@@ -35,7 +35,7 @@ require('layout/header.php');
 
                 ?>
 
-                <h3 class="text-center">Please select file to upload</h3>
+                <h3 class="text-center">Please select file to upload to public</h3>
                 <form method="post" action="upload.php" autocomplete="off" enctype="multipart/form-data">
                     <div class="form-group">
                         <div class="fileinput input-group fileinput-new" data-provides="fileinput">
@@ -49,11 +49,7 @@ require('layout/header.php');
                                 <input type="hidden" value="" name=""><input type="file" name="fileToUpload" id="fileToUpload""></span>
                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>
-                        <div class="form-group text-center">
-                            <h3 class="modal-header">File is:</h3>
-                            <label class="radio-inline"><input type="radio" name="file">Public</label>
-                            <label class="radio-inline"><input type="radio" name="file">Private</label>
-                        </div>
+
                         <div class="form-group text-center">
                             <div class="modal-header">
                             <button type="submit" class="btn btn-default">Submit</button>

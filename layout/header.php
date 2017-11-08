@@ -3,10 +3,12 @@
 <head>
     <script src="js/my.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php if(isset($title)){ echo $title; }?></title>
     <link href="css\bootstrap.min.css" rel="stylesheet">
     <link href="css\jasny-bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
+
 
 
 </head>
@@ -31,8 +33,9 @@
                 <?php
                 if( $user->is_logged_in())
                 {
-                    echo '<li id="li-myfiles"><a href="#">My Files</a></li>';
-                    echo '<li id="li-file"><a href="file.php">Upload</a></li>';
+                    echo '<li id="li-privatefiles"><a href="privatefiles.php">My Files</a></li>';
+                    echo '<li id="li-file"><a href="file.php">Public Upload</a></li>';
+                    echo '<li id="li-privatefile"><a href="privatefile.php">Private Upload</a></li>';
                     echo '<li id="li-profile"><a href="profile.php">' .$_SESSION['username'].'</a></li>';
                     echo '<li><a href=\'logout.php\'>Logout</a></li>';
                 }

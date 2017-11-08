@@ -26,6 +26,14 @@ function removeClass(ac) {
         document.getElementById("li-register").classList.remove('active');
     }
 
+    if( document.getElementById("li-privatefiles")){
+        document.getElementById("li-privatefiles").classList.remove('active');
+    }
+
+    if( document.getElementById("li-privatefile")){
+        document.getElementById("li-privatefile").classList.remove('active');
+    }
+
 
 
 }
