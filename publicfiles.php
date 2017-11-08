@@ -5,7 +5,6 @@ require_once('includes/config.php');
 require('layout/header.php');
 
 $dir = 'files/public/';
-$files1 = scandir($dir,1);
 ?>
 
 <div class="container">
@@ -15,18 +14,31 @@ $files1 = scandir($dir,1);
             <table class="table table-striped">
                 <thread>
                     <tr>
-                        <th>Number</th>
                         <th>File</th>
+                        <th>Uploaded by</th>
+                        <th>Date</th>
                     </tr>
                 </thread>
                 <tbody>
                 <?php
+
+                $stmt = $db->prepare('SELECT * FROM `files` INNER JOIN members ON files.memberID=members.memberID ORDER BY  `date` DESC');
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+
+
+
+
                 $count= 1;
-                    foreach ($files1 as $file)
+                    foreach ($result as $r)
                     {
                         echo '<tr>';
-                        echo '<td> '.$count.' </td>';
-                        echo '<td> '.$file.' </td>';
+
+                        echo '<td> '.$r['filename'].' </td>';
+                        echo '<td> '.$r['username'].' </td>';
+                        echo '<td> '.$r['date'].' </td>';
+
+
                         echo '</tr>';
                     $count++;
                     }
