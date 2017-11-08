@@ -50,7 +50,14 @@ require('layout/header.php');
                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>
                         <div class="form-group text-center">
+                            <h3 class="modal-header">File is:</h3>
+                            <label class="radio-inline"><input type="radio" name="file">Public</label>
+                            <label class="radio-inline"><input type="radio" name="file">Private</label>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="modal-header">
                             <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
                         </div>
 
                         <div class="form-group">

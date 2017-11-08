@@ -34,7 +34,7 @@ $dir = 'files/public/';
                     {
                         echo '<tr>';
 
-                        echo '<td> '.$r['filename'].' </td>';
+                        echo '<td><a href="download.php?filename='.$r['filename'] .'">'.$r["filename"].'</a></td>';
                         echo '<td> '.$r['username'].' </td>';
                         echo '<td> '.$r['date'].' </td>';
 
