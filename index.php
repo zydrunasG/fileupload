@@ -1,5 +1,5 @@
 <?php
-$title = "Eshop main page";
+$title = "File Upload";
 require_once('includes/config.php');
 
 require('layout/header.php');
@@ -14,11 +14,18 @@ else {
 }
 ?>
 
+<div class="container">
+    <div class="col-md-4 col-md-offset-4">
+        <img src="images/cloud-logo.png">
+    </div>
+</div>
 
 
 
-
-
+<script>
+    removeClass();
+    document.getElementById("li-home").classList.add("active");
+</script>
 
 <?php
 //include header template

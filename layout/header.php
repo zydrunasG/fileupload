@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/my.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php if(isset($title)){ echo $title; }?></title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css\bootstrap.min.css" rel="stylesheet">
+    <link href="css\jasny-bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
+
+
+
 </head>
 <body>
 
@@ -22,19 +28,20 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse pull-right">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/fileupload/index.php">Home</a></li>
-
+                <li id="li-home" class="active"><a href="/fileupload/index.php">Home</a></li>
+                <li id="li-publicfiles"><a href="publicfiles.php">Public Files</a></li>
                 <?php
                 if( $user->is_logged_in())
                 {
-                    echo '<li><a href="#about">Files</a></li>';
-                    echo '<li><a href="#contact">Upload</a></li>';
-                    echo '<li><a href="profile.php">' .$_SESSION['username'].'</a></li>';
+                    echo '<li id="li-privatefiles"><a href="privatefiles.php">My Files</a></li>';
+                    echo '<li id="li-file"><a href="file.php">Public Upload</a></li>';
+                    echo '<li id="li-privatefile"><a href="privatefile.php">Private Upload</a></li>';
+                    echo '<li id="li-profile"><a href="profile.php">' .$_SESSION['username'].'</a></li>';
                     echo '<li><a href=\'logout.php\'>Logout</a></li>';
                 }
                 else {
-                    echo '<li><a href="login.php">Login</a></li>';
-                    echo '<li><a href="register.php">Register</a></li>';
+                    echo '<li id="li-login"><a href="login.php">Login</a></li>';
+                    echo '<li id="li-register"><a href="register.php">Register</a></li>';
                 }
                 ?>
 
