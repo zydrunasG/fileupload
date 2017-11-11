@@ -7,6 +7,7 @@ Project requirements:
 	1.2) import fileupload.sql file  to created database
 2) Configure includes/config.php
 3) Create and configure includes/mailsettings.php
+	check sample file mailsetting_sample_file.php or:
 	<?php
 	//Server settings
 	$mail->SMTPDebug = 2;                                 // Enable verbose debug output
