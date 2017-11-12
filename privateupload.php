@@ -37,14 +37,15 @@ if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 $filename = basename( $_FILES["fileToUpload"]["name"]);
 try {
 //insert into database with a prepared statement
-$stmt = $db->prepare('INSERT INTO files (memberID, filename, date, isPrivate, rating) VALUES (:memberID, :filename, :date, :isPrivate, :rating)');
+$stmt = $db->prepare('INSERT INTO files (memberID, filename, date, isPrivate) VALUES (:memberID, :filename, :date, :isPrivate)');
 $stmt->execute(array(
 ':memberID' => $_SESSION['memberID'],
 'filename' => $filename,
 'date' => date("Y-m-d H:i:s"),
-'isPrivate' => 1,
-'rating' => 0,
+'isPrivate' => 1
 ));
+
+
 }
 catch(PDOException $e) {
 // $error[] = $e->getMessage();
