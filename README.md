@@ -1,4 +1,4 @@
-# fileupload
+# Fileupload
 File upload website
 
 Project requirements:
@@ -8,6 +8,7 @@ Project requirements:
 2) Configure includes/config.php
 3) Create and configure includes/mailsettings.php
 	check sample file mailsetting_sample_file.php or:
+	<p>
 	<?php
 	//Server settings
 	$mail->SMTPDebug = 2;                                 // Enable verbose debug output
@@ -23,7 +24,12 @@ Project requirements:
 	$mail->setFrom('sample@gmail.com', 'FileUpload');
 
 	?>
-	
+	</p>
 	
 4) Don't forget to create files/public and files/private folders
 5) Add .htaccess to files folder with:  deny from all
+
+
+## Screenshot
+
+![screencapture-fileupload-test-index-php-1517944661810](https://user-images.githubusercontent.com/29206400/35879527-1c6ee232-0b84-11e8-9d1c-62983b014afd.png)
